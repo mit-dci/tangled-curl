@@ -52,13 +52,24 @@ func validate(txns giota.Bundle) bool {
 }
 
 func main() {
-	bundle0 := bundleFromTrytes(BUNDLE0)
-	bundle1 := bundleFromTrytes(BUNDLE1)
+	bundle0 := bundleFromTrytes(BURN_BUNDLE0)
+	bundle1 := bundleFromTrytes(BURN_BUNDLE1)
 	if !validate(bundle0) || !validate(bundle1) {
 		return
 	}
 
 	if bundle0.Hash() == bundle1.Hash() && bundle0[3].Address != bundle1[3].Address {
-		fmt.Println("Collision!")
+		fmt.Println("Collision! Can burn funds")
 	}
+
+	bundle0 = bundleFromTrytes(STEAL_BUNDLE0)
+	bundle1 = bundleFromTrytes(STEAL_BUNDLE1)
+	if !validate(bundle0) || !validate(bundle1) {
+		return
+	}
+
+	if bundle0.Hash() == bundle1.Hash() && bundle0[5].Value != bundle1[5].Value {
+		fmt.Println("Collision! Can steal funds")
+	}
+
 }
