@@ -19,7 +19,7 @@ func bundleFromTrytes(trytes []string) giota.Bundle {
 }
 
 func validate(txns giota.Bundle) bool {
-	for i := 0; i < 4; i++ {
+	for i := 0; i < len(txns); i++ {
 		// The golang code doesn't check as much as the java code.
 		// Reproduce some checks here.
 
