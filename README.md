@@ -7,6 +7,7 @@ thus the same signature.
 ```
 $ go build
 $ ./tangled-curl
-Collision!
+Collision! Can burn funds
+Collision! Can steal funds
 $
 ```
