@@ -19,9 +19,16 @@ func bundleFromTrytes(trytes []string) giota.Bundle {
 }
 
 func validate(txns giota.Bundle) bool {
+	h := txns.Hash()
 	for i := 0; i < len(txns); i++ {
 		// The golang code doesn't check as much as the java code.
 		// Reproduce some checks here.
+
+		// Check to make sure bundle hashes are valid
+		if txns[i].Bundle != h {
+			fmt.Printf("Invalid transaction %v bundle hash %v\n", i, txns[i].Bundle)
+			return false
+		}
 
 		// check timestamp not too early. Note IOTA uses 1502226000
 		// after the upgrade; this bundle is pre-upgrade.
