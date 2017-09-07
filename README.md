@@ -1,6 +1,8 @@
-## Colliding IOTA Bundles
+## Vulnerability report on IOTA and colliding bundles
 
-Example of valid IOTA bundles which collide.
+Read the report [here](vuln-iota.md).
+
+Examples of valid IOTA bundles which collide.
 
 BURN_BUNDLEs collide on the 72nd trit of the Address field of the last
 transaction in each bundle.
