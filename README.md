@@ -1,22 +1,26 @@
-## Vulnerability report on IOTA and colliding bundles
+## Vulnerability report on IOTA and code to create collisions
 
-Read the report [here](vuln-iota.md).
+Read the original report [here](vuln-iota.md).
 
-Examples of valid IOTA bundles which collide.
+See `examples` for the original colliding bundles we released in 2017.
 
-BURN_BUNDLEs collide on the 72nd trit of the Address field of the last
-transaction in each bundle.
+See `valueattack`, `collide`, and `template` for the code to create colliding bundles.
 
-STEAL_BUNDLEs collide on the 17th trit of the Value fields in the 4th
-and 6th transaction in each bundle.
-
-The bundles in each pair have the same hash, and thus the same
-signature.
+Make sure to set your `GOPATH` and check out this repo to `$GOPATH/src/github.com/mit-dci/tangled-curl`
 
 ```
-$ go build
-$ ./tangled-curl
-Collision! Can burn funds
-Collision! Can steal funds
-$
+`cd $GOPATH/src/github.com/mit-dci/tangled-curl/valueattack`
+go get -u github.com/getlantern/deepcopy
+go get -u github.com/iotaledger/giota
 ```
+
+Make sure iotaledger is at the right commit:
+
+```
+pushd $GOPATH/src/github.com/iotaledger/giota/
+git checkout 7e48a1c9b9e904f07e1fc82815e5b302873a6dec
+popd
+go build
+```
+
+
