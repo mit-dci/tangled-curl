@@ -1,5 +1,7 @@
 ## Vulnerability report on IOTA and code to create collisions
 
+Read our full paper [Cryptanalysis of Curl-P and Other Attacks on the IOTA Cryptocurrency](http://i.blackhat.com/us-18/Wed-August-8/us-18-Narula-Heilman-Cryptanalysis-of-Curl-P-wp.pdf).
+
 Read the original report [here](vuln-iota.md).
 
 See `examples` for the original colliding bundles we released in 2017.
