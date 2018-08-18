@@ -11,7 +11,7 @@ See `valueattack`, `collide`, and `template` for the code to create colliding bu
 Make sure to set your `GOPATH` and check out this repo to `$GOPATH/src/github.com/mit-dci/tangled-curl`
 
 ```
-`cd $GOPATH/src/github.com/mit-dci/tangled-curl/valueattack`
+cd $GOPATH/src/github.com/mit-dci/tangled-curl/valueattack
 go get -u github.com/getlantern/deepcopy
 go get -u github.com/iotaledger/giota
 ```
