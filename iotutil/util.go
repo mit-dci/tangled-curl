@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/iotaledger/giota"
-	"github.com/narula/iotattack/collide"
+	"github.com/mit-dci/tangled-curl/collide"
 )
 
 // ReadBundle reads the given file from the filesystem and unmarshals

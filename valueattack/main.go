@@ -10,8 +10,8 @@ import (
 
 	"github.com/getlantern/deepcopy"
 	"github.com/iotaledger/giota"
-	"github.com/narula/iotattack/collide"
-	"github.com/narula/iotattack/iotutil"
+	"github.com/mit-dci/tangled-curl/collide"
+	"github.com/mit-dci/tangled-curl/iotutil"
 )
 
 var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")

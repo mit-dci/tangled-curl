@@ -16,13 +16,20 @@ go get -u github.com/getlantern/deepcopy
 go get -u github.com/iotaledger/giota
 ```
 
+Install pypy.
+
 Make sure iotaledger is at the right commit:
 
 ```
 pushd $GOPATH/src/github.com/iotaledger/giota/
 git checkout 7e48a1c9b9e904f07e1fc82815e5b302873a6dec
 popd
-go build
+```
+
+This version of iotaledger requires [cgo flag whitelisting](https://github.com/golang/go/wiki/InvalidFlag):
+
+```
+CGO_LDFLAGS_ALLOW='-msse2' go build
 ```
 
 
